@@ -8,24 +8,41 @@
 
     <!-- Link to CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
     <nav class="scroll-nav">
-        <button class="nav-gen-btn">Get Image</button>
-        <button class="nav-clear-btn">Clear Images</button>
+        <button class="nav-gen-btn">
+            Get Image
+            <i class="fa-solid fa-paw"></i>
+        </button>
+        <button class="nav-clear-btn">
+            Clear Images
+            <i class="fa-solid fa-trash"></i>
+        </button>
     </nav>
 
     <div class="project-container">
         <h1>See a random dog!</h1>
         <div class="btns-container">
-            <button class="gen-btn">Get Image</button>
-            <button class="clear-btn">Clear Images</button>
+            <button class="gen-btn">
+                Get Image
+                <i class="fa-solid fa-paw"></i>
+            </button>
+            <button class="clear-btn">
+                Clear Images
+                <i class="fa-solid fa-trash"></i>
+            </button>
         </div>
         <div class="card-container">
             <!-- Cards will be generated with app.js -->
 
-            <div class="card">
+
+            <!-- Leaving this hard-coded example incase there are problems with the dog api -->
+            <!-- <div class="card">
                 <div class="card-img-container">
                     <img src="https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_9564.jpg" alt="dog image">
                 </div>
@@ -33,27 +50,7 @@
                     <p class="breed-name">American Pit Bull Terrier</p>
                 </div>
                 <span class="close-btn">&times;</span>
-            </div>
-
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.dog.ceo/breeds/mastiff-english/4.jpg" alt="dog image">
-                </div>
-                <div class="card-info">
-                    <p class="breed-name">American Pit Bull Terrier</p>
-                </div>
-                <span class="close-btn">&times;</span>
-            </div>
-
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.dog.ceo/breeds/cattledog-australian/IMG_0206.jpg" alt="dog image">
-                </div>
-                <div class="card-info">
-                    <p class="breed-name">American Pit Bull Terrier</p>
-                </div>
-                <span class="close-btn">&times;</span>
-            </div>
+            </div> -->
         </div>
     </div>
     <script src="app.js"></script>
