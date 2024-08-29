@@ -65,6 +65,28 @@ const createDogCard = (data) => {
         newCardEl.remove();
     })
 
+    newCardEl.addEventListener('click', () => {
+        if (window.innerWidth <= 600) {
+            newCardEl.classList.toggle('active');
+            newCardEl.classList.toggle('hover');
+        }
+    })
+
+    newCardEl.addEventListener('mouseover', () => {
+        if (window.innerWidth > 600) {
+            newCardEl.classList.add('active');
+            newCardEl.classList.add('hover');
+        }
+    })
+
+    newCardEl.addEventListener('mouseout', () => {
+        if (window.innerWidth > 600) {
+            newCardEl.classList.remove('active');
+            newCardEl.classList.remove('hover');
+        }
+    })
+
+
     // Scroll into view when new card is created
     newCardEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
