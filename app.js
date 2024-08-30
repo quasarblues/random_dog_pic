@@ -1,10 +1,10 @@
+const btnsContainer = document.querySelector('.btns-container');
 const genBtn = document.querySelector('.gen-btn');
 const clearBtn = document.querySelector('.clear-btn');
 const navGenBtn = document.querySelector('.nav-gen-btn');
 const navClearBtn = document.querySelector('.nav-clear-btn');
 const cardContainerEl = document.querySelector('.card-container');
 const navbar = document.querySelector('.scroll-nav');
-
 
 const getRandDogImg = async () => {
     try {
@@ -86,17 +86,14 @@ const createDogCard = (data) => {
         }
     })
 
-
     // Scroll into view when new card is created
     newCardEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
 // Create scroll listener to display the navbar
 function createScrollListener() {
-    const firstCard = document.querySelector('.card');
     window.addEventListener('scroll', () => {
-        const firstCardTop = firstCard.getBoundingClientRect().top;
-        if (firstCardTop <= 0) {
+        if (btnsContainer.getBoundingClientRect().bottom <= 0) {
             navbar.style.display = 'flex';
         } else {
             navbar.style.display = 'none';
@@ -108,11 +105,11 @@ const removeAllImgs = () => {
     cardContainerEl.innerHTML = '';
 }
 
-// Wait 10ms to allow the DOM time to set the display of the navbar
+// Wait 50ms to allow the DOM time to set the display of the navbar
 const resetNavDisplay = () =>
     setTimeout(() => {
         navbar.style.display = 'none'
-    }, 10);
+    }, 50);
 
 genBtn.addEventListener('click', async () => {
     const data = await getRandDogImg();
@@ -122,10 +119,6 @@ genBtn.addEventListener('click', async () => {
     }
 })
 
-clearBtn.addEventListener('click', () => {
-    removeAllImgs();
-    resetNavDisplay();
-})
 
 navGenBtn.addEventListener('click', async () => {
     const data = await getRandDogImg();
@@ -136,6 +129,11 @@ navGenBtn.addEventListener('click', async () => {
 })
 
 navClearBtn.addEventListener('click', () => {
+    removeAllImgs();
+    resetNavDisplay();
+})
+
+clearBtn.addEventListener('click', () => {
     removeAllImgs();
     resetNavDisplay();
 })
